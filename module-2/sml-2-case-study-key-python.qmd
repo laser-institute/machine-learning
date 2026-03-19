@@ -146,7 +146,7 @@ We'll now transform our graduation rate variable into a binary outcome for our c
 Create a binary variable called `good_grad_rate` that indicates whether an institution has a graduation rate above a certain threshold. Choose a threshold that seems reasonable to you.
 
 ```{python}
-ipeds_df['good_grad_rate'] = np.where(ipeds_df['grad_rate'] > 70, 1, 0)
+ipeds_df['good_grad_rate'] = np.where(ipeds_df['grad_rate'] > 62, 1, 0)
 ```
 
 Here, add a reason or two for how and why you picked the threshold you did:
@@ -338,7 +338,7 @@ In this section, we introduce another scikit-learn tool called a Pipeline, which
 
 -   Imputing missing values with a mean or median, or using a model to estimate missing values.
 
--   Training a LinearRegression model.
+-   Training a LogisticRegression model.
 
 We'll dive more into the above steps in later modules, focusing now on just dealing with missing values (Imputation) and building a model.
 
@@ -363,7 +363,7 @@ X_test = test_df[independent_cols]
 y_test = test_df[dependent_col]
 ```
 
-Since we're predicting a binary outcome (`good_grad_rate`), we will use the scikit-learn `LinearRegression` model. To deal with the blank values (i.e. nulls) that would break the model, we use the scikit-learn SimpleImputer. This fills blank values with a variety of strategies one can specify. In this example we will use "median" which fills blanks with the median value for that column:
+Since we're predicting a binary outcome (`good_grad_rate`), we will use the scikit-learn `LogisticRegression` model. To deal with the blank values (i.e. nulls) that would break the model, we use the scikit-learn SimpleImputer. This fills blank values with a variety of strategies one can specify. In this example we will use "median" which fills blanks with the median value for that column:
 
 Run the following code to finish specifying our model:
 
@@ -407,10 +407,10 @@ print('accuracy:', accuracy)
 
 #### **👉 Your Turn** **⤵**
 
-A short-cut to the above is to simply use the scikit-learn `accuracy_score()` function (which we already imported above), taking `y_preds` as the first argument and `y_test` as the second; **we'll use this short-cut from here forward**, having seen how accuracy is calculated. Write that code below.
+A short-cut to the above is to simply use the scikit-learn `accuracy_score()` function (which we already imported above), taking `y_test` as the first argument and `y_preds` as the second; **we'll use this short-cut from here forward**, having seen how accuracy is calculated. Write that code below.
 
 ```{python}
-accuracy_score(y_preds, y_test)
+accuracy_score(y_test, y_preds)
 ```
 
 Let's step back a bit. How well *could* we do if we include more data? And how *useful* could such a model be in the real world? We'll dive into these questions more over the forthcoming modules.

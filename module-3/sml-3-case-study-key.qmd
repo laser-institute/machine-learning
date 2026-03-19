@@ -174,7 +174,7 @@ Let's copy the code below that we used to process the students data (when proces
 ```{r}
 students <- students %>% 
     mutate(pass = ifelse(final_result == "Pass", 1, 0)) %>% # creates a dummy code
-    mutate(pass = as.factor(pass)) # makes the variable a factor, helping later steps
+    mutate(pass = factor(pass, levels = c("1", "0"))) # makes the variable a factor with "1" (pass) as the first level
 
 students <- students %>% 
     mutate(imd_band = factor(imd_band, levels = c("0-10%",
@@ -269,7 +269,7 @@ my_wf <-
 
 Finally, we'll use the `last_fit` function, but we'll add something a little different - we'll add the metric set here. To the above, we'll add another common metric - Cohen's Kappa, which is similar to accuracy, but which accounts for chance agreement.
 
-To do so, we have to specify *which* metrics we want to use using the `metric_set()` function (see all of the avaimodulele options [here](https://yardstick.tidymodels.org/articles/metric-types.html)). Please specify six metrics in the metric set -- accuracy, sensitivity, specificity, ppv (recall), npv, and kappa. Assign the name `class_metrics` to the output of your use of the `metric_set()` function.
+To do so, we have to specify *which* metrics we want to use using the `metric_set()` function (see all of the available options [here](https://yardstick.tidymodels.org/articles/metric-types.html)). Please specify six metrics in the metric set -- accuracy, sensitivity, specificity, ppv (recall), npv, and kappa. Assign the name `class_metrics` to the output of your use of the `metric_set()` function.
 
 #### **👉 Your Turn** **⤵**
 
@@ -339,8 +339,8 @@ So, what does this hard-won by output tell us? Let's interpret each statistic ca
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | **Statistic**                             | **Substantive Interpretation**                                                                                                              |
 | Accuracy                                  |                                                                                                                                             |
-| Sensitivity (AKA recall)                  | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
-| Specificity                               |                                                                                                                                             |
+| Sensitivity (AKA recall)                  | The model correctly predicts about 43% of students who pass correctly (as passing). This is quite low and could be improved.                |
+| Specificity                               | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
 | Precision (AKA Positive Predictive Value) |                                                                                                                                             |
 | Negative Predictive Value                 |                                                                                                                                             |
 

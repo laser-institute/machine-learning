@@ -34,7 +34,7 @@ Part B: Use institutional library access (e.g. [NCSU Library](https://www.lib.nc
 
     -   
 
-2.  What research questions were the authors of this study trying to address using Latent Profile Analysis or a similar method?
+2.  What research questions were the authors of this study trying to address using supervised machine learning or a similar method?
 
     -   
 

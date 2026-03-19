@@ -28,7 +28,7 @@ Each supervised machine learning "case study" is designed to illustrate how supe
 
 Figure 2.2 Steps of Data-Intensive Research Workflow
 
-In the overview presentation for this learning lab, we considered five steps in our supervised machine learning process. Those steps are mirrored here in this case study, with the addition of some other components of this workflow. For example, to help prepare for analysis, we'll first take a step back and think about how we want to use machine learning, and *predicting* is a key word. Many scholars have focused on predicting students who are *at-risk*: of dropping a course or not succeeding in it. In the ML Learning Lab 1 case study will cover the following workflow topics as we attempt to develop our own model for predicting student drop-out:
+In the overview presentation for this learning lab, we considered five steps in our supervised machine learning process. Those steps are mirrored here in this case study, with the addition of some other components of this workflow. For example, to help prepare for analysis, we'll first take a step back and think about how we want to use machine learning, and *predicting* is a key word. Many scholars have focused on predicting students who are *at-risk*: of dropping a course or not succeeding in it. In the ML Learning Lab 1 case study will cover the following workflow topics as we attempt to develop our own model for predicting institutional graduation rates:
 
 1.  **Prepare**: Prior to analysis, we'll look at the context from which our data came, formulate a basic research question, and get introduced the {tidymodels} packages for machine learning.
 

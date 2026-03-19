@@ -13,7 +13,7 @@ theme:
 editor: visual
 ---
 
-The final activity for eacprovides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
+The final activity for each lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
 To earn a badge for each lab, there are two parts to complete:
 
@@ -23,7 +23,7 @@ To earn a badge for each lab, there are two parts to complete:
 
 ### Part I: Extending our model
 
-In this part of the badge activity, please add another variable -- a variable for the number of days before the start of the module students registered. This variable will be a **third predictor**. By adding it, you'll be able to examine how much *more accurate* your model is (if at al, as this variable might not have great predictive power). Note that this variable is a number and so no pre-processing is necessary.
+In this part of the badge activity, please add another variable as a **third predictor** from the IPEDS data set. By adding it, you'll be able to examine how much *more accurate* your model is (if at all, as this variable might not have great predictive power).
 
 In doing so, please move all of your code needed to run the analysis over from your case study file here. This is essential for your analysis to be reproducible. You may wish to break your code into multiple chunks based on the overall purpose of the code in the chunk (e.g., loading packages and data, wrangling data, and each of the machine learning steps).
 

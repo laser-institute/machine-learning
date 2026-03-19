@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 
 ## 1. PREPARE
 
-After interpreting our last model, it is easy to think we can do a little better. But, how? In this module, we'll do do things: 1) specify a more sophisticated model and 2) go deeper on some feature engineering.
+After interpreting our last model, it is easy to think we can do a little better. But, how? In this module, we'll do two things: 1) specify a more sophisticated model and 2) go deeper on some feature engineering.
 
 Our driving question for this module, then, is: **How much can we improve our model?** Looking back to our predictive model from module 3, we can see that our accuracy was okay. Can we improve on that? Let's dive in! First, we'll briefly review two key concepts for the module.
 
@@ -96,7 +96,7 @@ Now let’s load it:
 interactions_df = pd.read_parquet("data/oulad-interactions.parquet")
 ```
 
-We can see that this file is indeed large - more than 10 million rows, with data on the number of *clicks* (`sum_clicks)` a student in a particular offering of a course makes with a particular component of the course (`id_site`) and the type of that component (`activity_type`). at a specific time.
+We can see that this file is indeed large - more than 10 million rows, with data on the number of *clicks* (`sum_clicks`) a student in a particular offering of a course makes with a particular component of the course (`id_site`) and the type of that component (`activity_type`) at a specific time.
 
 Since you did something similar in the last module, you'll just run the code in the chunk below to calculate and filter the data based on a cut-off point (and associated date).
 
@@ -135,7 +135,7 @@ What do you notice about this data in relation to the original data set? You may
 
 -   
 
-We will not only use this (filtered) interactions data, but also data on students and assessments. Here, we'll be expeditious by loading a file we created in the last module - `oulad-students_and_assessments.csv`. That is in this module's data folder; please load this in with `read_csv()`, as below.
+We will not only use this (filtered) interactions data, but also data on students and assessments. Here, we'll be expeditious by loading a file we created in the last module - `oulad-students-and-assessments.csv`. That is in this module's data folder; please load this in with `read_csv()`, as below.
 
 #### **👉 Your Turn** **⤵**
 
@@ -490,7 +490,7 @@ importances = model.feature_importances_
 
 # Get categorical and numerical names from the fitted preprocessor
 preprocessor = model_pipeline.named_steps['preprocessor']
-categorical_names = preprocessor.named_transformers_['cat'] .named_steps['onehot'].get_feature_names_out(categorical_features)
+categorical_names = preprocessor.named_transformers_['cat'].named_steps['onehot'].get_feature_names_out(categorical_features)
 numerical_names = numerical_features
 all_feature_names = list(categorical_names) + numerical_names
 

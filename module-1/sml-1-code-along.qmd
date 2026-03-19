@@ -87,7 +87,7 @@ pokemon %>%
 
 ## 1
 
-**Fit model -- we'll just use three variables to begin with a very simple model - how do several variables relate to a Pokemon being 1st or 2nd gen relative to 3rd-6th**
+**Fit model -- we'll just use three variables to begin with a very simple model - how do several variables relate to a Pokemon being legendary**
 
 ```{r}
 #| eval: false
@@ -161,7 +161,7 @@ pokemon_df.head()
 #| echo: true
 import statsmodels.formula.api as smf
 
-model = smf.logit('early_gen ~ height_m + weight_kg + hp', data=pokemon_df).fit()
+model = smf.logit('is_legendary ~ height_m + weight_kg + hp', data=pokemon_df).fit()
 ```
 
 ## 2
@@ -213,7 +213,7 @@ library(tidymodels)
 #| eval: false
 
 pokemon <- pokemon %>% 
-     mutate(early_gen = as.factor(early_gen))
+     mutate(is_legendary = as.factor(is_legendary))
 
 pokemon_recipe <- recipe(is_legendary ~ height_m + weight_kg + hp, 
                          data = pokemon)
@@ -244,7 +244,7 @@ my_wf <- workflow() %>%
 #| echo: true
 #| eval: false
 
-log_reg_fit <- fit(my_wf, pokemon_split)
+log_reg_fit <- fit(my_wf, pokemon)
 ```
 
 ## 5
@@ -255,10 +255,10 @@ log_reg_fit <- fit(my_wf, pokemon_split)
 #| echo: true
 #| eval: false
 
-pokemon_preds <- predict(log_reg_fit, pokemon, type = "class") %>% 
-  bind_cols(pokemon %>% select(early_gen))
+pokemon_preds <- predict(log_reg_fit, pokemon, type = "class") %>%
+  bind_cols(pokemon %>% select(is_legendary))
 
-metrics(pokemon_preds, truth = early_gen, estimate = .pred_class)
+metrics(pokemon_preds, truth = is_legendary, estimate = .pred_class)
 ```
 :::
 
@@ -277,7 +277,7 @@ from sklearn.metrics import accuracy_score
 
 pokemon_df = pokemon_df.dropna()  # sci-kit learn won't work with rows that have nulls 
 
-#Todo(Josh): Determine if we want to talk about imputation; e.g., median filling
+
 ```
 
 ## 1

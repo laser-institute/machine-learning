@@ -12,7 +12,7 @@ Building on the foundations from Module 1, this session delves deeper into the w
 
 ## Module 3: Interpreting Prediction Metrics
 
-How is the interpretation of SML models different from more familiar models? In this module, we'll explore and work to understand the confusion matrix that can and the various metrics (e.g., precision, recall, PPV, NPV, F-score, and AUC) that are used to interpret how good at making dichotomous predictions SML models are. We'll again use the OULAD, augmenting the variables we used in Module 1, and we'll introduce a more complex model---the random forest model---as an alternative to the regression models used in previous modules.
+How is the interpretation of SML models different from more familiar models? In this module, we'll explore and work to understand the confusion matrix and the various metrics (e.g., precision, recall, PPV, NPV, F-score, and AUC) that are used to interpret how good at making dichotomous predictions SML models are. We'll again use the OULAD, augmenting the variables we used in Module 1, and we'll continue to use logistic regression while focusing on the interpretation of prediction metrics.
 
 ## Module 4: How Do We Make Our Models Better?
 

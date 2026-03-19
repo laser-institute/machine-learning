@@ -443,10 +443,10 @@ Importantly, we can *summarize* across all of these codes. One way to do this is
 final_fit %>% 
     collect_predictions() %>% # see test set predictions
     select(.pred_class, good_grad_rate) %>% # just to make the output easier to view 
-    mutate(correct = .pred_class == good_grad_rate) # create a new variable, co
+    mutate(correct = .pred_class == good_grad_rate) # create a new variable, correct
 ```
 
-You may notice some of the rows may be missing values. This is because there were some missing values in the `imd_band` variable, and for this machine learning algorithm (the generalized linear model), missing values result in row-wise deletion.
+You may notice some of the rows may be missing values. This is because there were some missing values in some of the predictor variables, and for this machine learning algorithm (the generalized linear model), missing values result in row-wise deletion.
 
 When these are **the same**, the model predicted the code *correctly*; when they aren't the same, the model was incorrect.
 
@@ -456,7 +456,7 @@ We can also tabulate these using the `tabyl` function:
 final_fit %>% 
     collect_predictions() %>% # see test set predictions
     select(.pred_class, good_grad_rate) %>% # just to make the output easier to view 
-    mutate(correct = .pred_class == good_grad_rate) %>%  # create a new variable, co
+    mutate(correct = .pred_class == good_grad_rate) %>%  # create a new variable, correct
     tabyl(correct)
 ```
 

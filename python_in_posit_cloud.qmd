@@ -1,6 +1,10 @@
 ---
-
-## title: "Using Python in Posit Cloud" format: html: toc: true number-sections: true
+title: "Using Python in Posit Cloud"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
 
 # Short Answer
 

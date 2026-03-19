@@ -369,8 +369,8 @@ So, what does this hard-won by output tell us? Let's interpret each statistic ca
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | **Statistic**                             | **Substantive Interpretation**                                                                                                              |
 | Accuracy                                  |                                                                                                                                             |
-| Sensitivity (AKA recall)                  | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
-| Specificity                               |                                                                                                                                             |
+| Sensitivity (AKA recall)                  | The model correctly predicts about 43% of students who pass correctly (as passing). This is quite low and could be improved.                |
+| Specificity                               | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
 | Precision (AKA Positive Predictive Value) |                                                                                                                                             |
 | Negative Predictive Value                 |                                                                                                                                             |
 

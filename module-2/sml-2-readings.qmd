@@ -37,13 +37,13 @@ To help guide your reflection on the readings, a set of guiding questions are pr
 
 -   Breiman emphasizes the importance of prediction accuracy over interpretability in some cases. Discuss scenarios in educational data science where this trade-off might be justified and how educators can balance these competing priorities.
 
-### Estrellado et al. (2021)
+### Estrellado et al. (2020)
 
 -   Discuss the importance of data preprocessing and feature engineering in building predictive models for educational data. What specific techniques were used in this chapter, and how did they impact the model's performance?
 
 -   How do the authors address the issue of missing data in online course datasets? What alternative strategies could be considered for handling missing data, and how might these affect the results?
 
--   Which algorithm do Estrellado et al. (2021) use, and why? What are the drawbacks and limitations of this model.
+-   Which algorithm do Estrellado et al. (2020) use, and why? What are the drawbacks and limitations of this model.
 
 ### Kuzilek et al. (2017)
 

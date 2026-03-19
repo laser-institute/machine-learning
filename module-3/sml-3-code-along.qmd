@@ -194,9 +194,9 @@ y_actual = test_df['early_gen'].astype(int)
 ```{python}
 #| eval: false
 #| echo: true
-from sklearn.metrics import accuracy_score, recall_score, confusion_matrix, cohen_kappa_score
+from sklearn.metrics import accuracy_score, recall_score, precision_score, confusion_matrix, cohen_kappa_score
 
-# Metrics we'se seen: 
+# Metrics we've seen: 
 accuracy = accuracy_score(y_actual, y_preds)
 
 # New metrics

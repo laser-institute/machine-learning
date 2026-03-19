@@ -32,7 +32,7 @@ Each supervised machine learning "case study" is designed to illustrate how supe
 
 Figure 2.2 Steps of Data-Intensive Research Workflow
 
-In the overview presentation for this learning lab, we considered five steps in our supervised machine learning process. Those steps are mirrored here in this case study, with the addition of some other components of this workflow. For example, to help prepare for analysis, we'll first take a step back and think about how we want to use machine learning, and *predicting* is a key word. Many scholars have focused on predicting students who are *at-risk*: of dropping a course or not succeeding in it. In the ML Learning Lab 1 case study will cover the following workflow topics as we attempt to develop our own model for predicting student drop-out:
+In the overview presentation for this learning lab, we considered five steps in our supervised machine learning process. Those steps are mirrored here in this case study, with the addition of some other components of this workflow. For example, to help prepare for analysis, we'll first take a step back and think about how we want to use machine learning, and *predicting* is a key word. Many scholars have focused on predicting students who are *at-risk*: of dropping a course or not succeeding in it. In the ML Learning Lab 1 case study will cover the following workflow topics as we attempt to develop our own model for predicting institutional graduation rates:
 
 1.  **Prepare**: Prior to analysis, we'll look at the context from which our data came, formulate a basic research question, and get introduced the {tidymodels} packages for machine learning.
 
@@ -252,7 +252,7 @@ Your next task is to decide what constitutes a good graduation rate. Our only su
 
 import numpy as np 
 
-ipeds_df['good_grad_rate'] = np.where(ipeds_df['grad_rate'] > 75, 1, 0)
+ipeds_df['good_grad_rate'] = np.where(ipeds_df['grad_rate'] > 62, 1, 0)
 ```
 
 Here, add a reason or two for how and why you picked the number you did:
@@ -318,7 +318,7 @@ X = ipeds_df[independent_cols]  # split our dataset between dependent and indepe
 y = ipeds_df[dependent_col]
 
 model = LogisticRegression()  # Define the model object. Here is where we coul set any model parameters in the future
-model.fit(X=X, y=y)  # Fit the model on the enire dataset
+model.fit(X=X, y=y)  # Fit the model on the entire dataset
 
 y_preds = model.predict(X)
 accuracy = accuracy_score(y, y_preds)  # use sklearn built in functions to evaluate accuracy

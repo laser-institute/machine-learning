@@ -170,7 +170,7 @@ Let's copy the code below that we used to process the students data (when proces
 ```{r}
 students <- students %>% 
     mutate(pass = ifelse(final_result == "Pass", 1, 0)) %>% # creates a dummy code
-    mutate(pass = as.factor(pass)) # makes the variable a factor, helping later steps
+    mutate(pass = factor(pass, levels = c("1", "0"))) # makes the variable a factor with "1" (pass) as the first level
 
 students <- students %>% 
     mutate(imd_band = factor(imd_band, levels = c("0-10%",
@@ -332,8 +332,8 @@ So, what does this hard-won by output tell us? Let's interpret each statistic ca
 |-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | **Statistic**                             | **Substantive Interpretation**                                                                                                              |
 | Accuracy                                  |                                                                                                                                             |
-| Sensitivity (AKA recall)                  | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
-| Specificity                               |                                                                                                                                             |
+| Sensitivity (AKA recall)                  | The model correctly predicts about 43% of students who pass correctly (as passing). This is quite low and could be improved.                |
+| Specificity                               | The model correctly predicts about 2/3 of students who do not pass correctly (as not passing). This is pretty good, but it could be better. |
 | Precision (AKA Positive Predictive Value) |                                                                                                                                             |
 | Negative Predictive Value                 |                                                                                                                                             |
 
